@@ -1,2 +1,11 @@
+http://127.0.0.1:5000/?url=https://pwintyimages.blob.core.windows.net/samples/stars/test-sample-black.png
+>> black
+
+http://127.0.0.1:5000/?url=https://pwintyimages.blob.core.windows.net/samples/stars/test-sample-grey.png
+>> grey
+
+http://127.0.0.1:5000/?url=https://pwintyimages.blob.core.windows.net/samples/stars/test-sample-teal.png
+>> teal
+
 http://127.0.0.1:5000/?url=https://pwintyimages.blob.core.windows.net/samples/stars/test-sample-navy.png
-{"swatch":"navy","url":"https://pwintyimages.blob.core.windows.net/samples/stars/test-sample-navy.png"}
+>> navy
