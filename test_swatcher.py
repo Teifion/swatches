@@ -2,7 +2,7 @@ import swatcher
 import unittest
 
 class SwatcherMethods(unittest.TestCase):
-  def ttest_known_urls(self):
+  def test_known_urls(self):
     urls = [
       ('https://pwintyimages.blob.core.windows.net/samples/stars/test-sample-black.png', 'black'),
       ('https://pwintyimages.blob.core.windows.net/samples/stars/test-sample-grey.png', 'grey'),
@@ -16,16 +16,16 @@ class SwatcherMethods(unittest.TestCase):
   def test_find_closest_swatch(self):
     colours = [
       # Exact matches
-      ((0, 0, 0), "black"),
-      ((50, 50, 50), "grey"),
+      ((20, 20, 20), "black"),
+      ((60, 60, 60), "grey"),
       ((0, 100, 100), "teal"),
       ((0, 0, 100), "navy"),
 
       # Close matches
       ((20, 20, 20), "black"),
-      ((40, 40, 40), "grey"),
+      ((75, 75, 75), "grey"),
       ((20, 120, 80), "teal"),
-      ((20, 20, 80), "navy"),
+      ((20, 20, 120), "navy"),
 
       # Distance match, we could also use these values to test swatch distance failures
       ((20, 9999, 80), "teal"),

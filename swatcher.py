@@ -5,8 +5,8 @@ from PIL import Image
 # Swatches stored as a dictionary, key = name of swatch and value an RGB tuple of the colour
 # RGB is stored as integers in the range of 0-255
 _swatches = {
-  "black": (0, 0, 0),
-  "grey": (50, 50, 50),
+  "black": (30, 30, 30),
+  "grey": (60, 60, 60),
   "teal": (0, 100, 100),
   "navy": (0, 0, 100),
 }
@@ -21,7 +21,6 @@ def _get_image_from_url(url):
 
 def _get_image_from_file(path):
   # Opens the URL for the image and returns a fully fledged PIL image object
-  print(path)
   Image.open(path)
 
 def _swatch_image(the_image):
