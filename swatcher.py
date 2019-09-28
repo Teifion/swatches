@@ -6,8 +6,8 @@ from PIL import Image
 # RGB is stored as integers in the range of 0-255
 _swatches = {
   "black": (0, 0, 0),
-  "grey": (50, 50, 150),
-  "teal": (50, 50, 150),
+  "grey": (50, 50, 50),
+  "teal": (0, 100, 100),
   "navy": (0, 0, 100),
 }
 
