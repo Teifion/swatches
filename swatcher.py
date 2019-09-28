@@ -14,10 +14,15 @@ _swatches = {
 # If the closest swatch is over this distance, we want to call attention to it
 _maximum_distance = 150
 
-def _get_image(url):
+def _get_image_from_url(url):
   # Opens the URL for the image and returns a fully fledged PIL image object
   with urllib.request.urlopen(url) as f:
     return Image.open(BytesIO(f.read()))
+
+def _get_image_from_file(path):
+  # Opens the URL for the image and returns a fully fledged PIL image object
+  print(path)
+  Image.open(path)
 
 def _swatch_image(the_image):
   colour = _most_frequent_colour(the_image)
@@ -70,7 +75,19 @@ def swatch_url(url):
 
   "https://pwintyimages.blob.core.windows.net/samples/stars/test-sample-black.png" -> "black"
   """
-  the_image = _get_image(url)
+  the_image = _get_image_from_url(url)
+  swatch_result, error = _swatch_image(the_image)
+
+  # If the swatch colour and dominant colour are too far apart, this is where
+  # we would go about logging it
+  if error:
+    pass
+
+  return swatch_result
+
+def swatch_file(path):
+  # Same as swatch_url but takes a file path instead
+  the_image = _get_image_from_file(path)
   swatch_result, error = _swatch_image(the_image)
 
   # If the swatch colour and dominant colour are too far apart, this is where
